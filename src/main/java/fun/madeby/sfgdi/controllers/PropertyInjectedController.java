@@ -3,6 +3,7 @@ package fun.madeby.sfgdi.controllers;
 import fun.madeby.sfgdi.services.GreetingService;
 import fun.madeby.sfgdi.services.GreetingServiceEnglish;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class PropertyInjectedController {
 
+    @Qualifier("greetingServiceEnglish")
     @Autowired
     public GreetingService greetingService;
 

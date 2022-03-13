@@ -1,9 +1,6 @@
 package fun.madeby.sfgdi;
 
-import fun.madeby.sfgdi.controllers.ConstructorInjectedController;
-import fun.madeby.sfgdi.controllers.MyController;
-import fun.madeby.sfgdi.controllers.PropertyInjectedController;
-import fun.madeby.sfgdi.controllers.SetterInjectedController;
+import fun.madeby.sfgdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -46,6 +43,11 @@ public class SfgDiApplication {
 		ConstructorInjectedController stefan = (ConstructorInjectedController)  ctx.getBean("constructorInjectedController");
 		String greeting3 = stefan.getGreeting();
 		System.out.println(greeting3);
+
+		System.out.println("ConstructorInjected_Primary - always used if injection is not qualified:");
+		AdditionalController melissa = (AdditionalController) ctx.getBean("additionalController");
+		String greeting4 = melissa.getGreeting();
+		System.out.println(greeting4);
 	}
 
 }
