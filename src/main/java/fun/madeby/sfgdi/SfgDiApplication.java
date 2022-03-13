@@ -12,6 +12,13 @@ public class SfgDiApplication {
 		// Get handle on the Spring Context
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 
+		// Using profile set to ES or IT in application.properties:
+		I18nController profileChosenController = (I18nController) ctx.getBean("i18nController");
+
+		String greetz = profileChosenController.sayHello();
+
+		System.out.println(greetz);
+
 		// Grab hold of bean already in context via @Controller
 		MyController myController = (MyController) ctx.getBean("myController");
 
