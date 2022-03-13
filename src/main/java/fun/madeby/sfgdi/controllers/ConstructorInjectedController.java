@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
  * Created by Gra_m
  * on 2022 03 12
  */
+@Controller
 public class ConstructorInjectedController {
 
     private final GreetingService GREETING_SERVICE;
